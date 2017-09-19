@@ -11,7 +11,7 @@ class App extends Component {
 
 	render() {
 		return <div>
-			<ReactHint events delay={100} />
+			<ReactHint events delay={1000} />
 			<ReactHint attribute="data-custom" className="custom-hint"
 				ref={(ref) => this.instance = ref} />
 

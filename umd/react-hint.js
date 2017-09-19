@@ -131,6 +131,7 @@ var ReactHintFactory = function ReactHintFactory(_ref) {
 				while (el) {
 					if (el === document) break;
 					if (hover && el === _this._hint) return target;
+					if (el.hasAttribute('data-rh-tooltip')) return target;
 					if (el.hasAttribute(attribute)) return el;
 					el = el.parentNode;
 				}return null;
@@ -248,6 +249,7 @@ var ReactHintFactory = function ReactHintFactory(_ref) {
 				},
 				style: { top: top, left: left }
 			}, createElement('div', {
+				'data-rh-tooltip': true,
 				className: className + '__content'
 			}, this.renderContent(content))));
 		};
