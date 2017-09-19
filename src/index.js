@@ -42,6 +42,7 @@ export const ReactHintFactory = ({Component, createElement}) =>
 			while (el) {
 				if (el === document) break
 				if (hover && el === this._hint) return target
+				if (el.hasAttribute('data-rh-tooltip')) return target
 				if (el.hasAttribute(attribute)) return el
 				el = el.parentNode
 			} return null
@@ -129,6 +130,7 @@ export const ReactHintFactory = ({Component, createElement}) =>
 					ref: (ref) => this._hint = ref,
 					style: {top, left}
 				}, createElement('div', {
+					'data-rh-tooltip': true,
 					className: `${className}__content`
 				}, this.renderContent(content)))
 			)
