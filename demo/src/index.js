@@ -22,6 +22,24 @@ class App extends Component {
 			<button data-rh="Left" data-rh-at="left">Left</button>
 			<button data-custom="#content" data-custom-at="bottom"
 				onClick={this.toggleCustomHint}>Click Me</button>
+			<button
+				data-rh="Default"
+				data-rh-overflow
+				style={{
+					width: '100px',
+					'white-space': 'nowrap',
+					overflow: 'hidden',
+					'text-overflow': 'ellipsis'
+				}}>Overflowing text in a small button</button>
+			<button
+				data-rh="Default"
+				data-rh-overflow
+				style={{
+					width: 'auto',
+					'white-space': 'nowrap',
+					overflow: 'hidden',
+					'text-overflow': 'ellipsis'
+				}}>Non-Overflowing text in a large button</button>
 
 			<div id="content" style={{display: 'none'}}>
 				Here goes a custom tooltip.<br />

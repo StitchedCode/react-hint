@@ -128,13 +128,24 @@ var ReactHintFactory = function ReactHintFactory(_ref) {
 				var target = _this.state.target;
 
 
-				while (el) {
-					if (el === document) break;
-					if (hover && el === _this._hint) return target;
-					if (el.hasAttribute('data-rh-tooltip')) return target;
-					if (el.hasAttribute(attribute)) return el;
-					el = el.parentNode;
-				}return null;
+				var newTarget = function () {
+					while (el) {
+						if (el === document) break;
+						if (hover && el === this._hint) return target;
+
+						// Keep hovered, visible tooltips
+						if (el.hasAttribute('data-rh-tooltip')) return target;
+						if (el.hasAttribute(attribute)) return el;
+						el = el.parentNode;
+					}return null;
+				}();
+
+				// Perform a width check if we need to
+				if (newTarget && newTarget.hasAttribute('data-rh-overflow') && newTarget.scrollWidth <= newTarget.clientWidth) {
+					return null;
+				}
+
+				return newTarget;
 			}, _this.getHintData = function (_ref2, _ref3) {
 				var target = _ref2.target;
 				var attribute = _ref3.attribute,
