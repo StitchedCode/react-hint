@@ -138,15 +138,16 @@ export const ReactHintFactory = ({Component, createElement}) =>
 			const {target, content, at, top, left} = this.state
 
 			return createElement('div', {
+					className: className,
 					ref: (ref) => this._container = ref,
 					style: {position: 'relative'},
 				}, target && createElement('div', {
-					className: `${className} ${className}--${at}`,
+					'data-rh-tooltip': true,
+					className: `react-hint-wrapper react-hint-${at}`,
 					ref: (ref) => this._hint = ref,
 					style: {top, left}
 				}, createElement('div', {
-					'data-rh-tooltip': true,
-					className: `${className}__content`
+					className: `react-hint-content`
 				}, this.renderContent(content)))
 			)
 		}

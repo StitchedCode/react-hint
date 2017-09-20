@@ -1,4 +1,7 @@
 .react-hint {
+}
+
+.react-hint-wrapper {
 	padding: 5px;
 	position: absolute;
 	z-index: 9999;
@@ -6,14 +9,14 @@
 	animation: .5s fadeIn;
 }
 
-.react-hint__content {
+.react-hint-content {
 	padding: 10px;
 	border-radius: 5px;
 	background: #000;
 	color: #fff;
 }
 
-.react-hint:after {
+.react-hint-wrapper:after {
 	content: '';
 	width: 0;
 	height: 0;
@@ -27,25 +30,25 @@
 	border: 5px solid transparent;
 }
 
-.react-hint--top:after {
+.react-hint-top:after {
 	top: auto;
 	border-bottom: none;
 	border-top-color: #000;
 }
 
-.react-hint--left:after {
+.react-hint-left:after {
 	left: auto;
 	border-right: none;
 	border-left-color: #000;
 }
 
-.react-hint--right:after {
+.react-hint-right:after {
 	right: auto;
 	border-left: none;
 	border-right-color: #000;
 }
 
-.react-hint--bottom:after {
+.react-hint-bottom:after {
 	bottom: auto;
 	border-top: none;
 	border-bottom-color: #000;

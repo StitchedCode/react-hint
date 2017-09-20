@@ -11,7 +11,7 @@ class App extends Component {
 
 	render() {
 		return <div>
-			<ReactHint events delay={1000} />
+			<ReactHint events delay={0} />
 			<ReactHint attribute="data-custom" className="custom-hint"
 				ref={(ref) => this.instance = ref} />
 
@@ -27,18 +27,18 @@ class App extends Component {
 				data-rh-overflow
 				style={{
 					width: '100px',
-					'white-space': 'nowrap',
+					'whiteSpace': 'nowrap',
 					overflow: 'hidden',
-					'text-overflow': 'ellipsis'
+					'textOverflow': 'ellipsis'
 				}}>Overflowing text in a small button</button>
 			<button
 				data-rh="Default"
 				data-rh-overflow
 				style={{
 					width: 'auto',
-					'white-space': 'nowrap',
+					whiteSpace: 'nowrap',
 					overflow: 'hidden',
-					'text-overflow': 'ellipsis'
+					textOverflow: 'ellipsis'
 				}}>Non-Overflowing text in a large button</button>
 
 			<div id="content" style={{display: 'none'}}>

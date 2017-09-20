@@ -249,19 +249,20 @@ var ReactHintFactory = function ReactHintFactory(_ref) {
 
 
 			return createElement('div', {
+				className: className,
 				ref: function ref(_ref5) {
 					return _this2._container = _ref5;
 				},
 				style: { position: 'relative' }
 			}, target && createElement('div', {
-				className: className + ' ' + className + '--' + at,
+				'data-rh-tooltip': true,
+				className: 'react-hint-wrapper react-hint-' + at,
 				ref: function ref(_ref6) {
 					return _this2._hint = _ref6;
 				},
 				style: { top: top, left: left }
 			}, createElement('div', {
-				'data-rh-tooltip': true,
-				className: className + '__content'
+				className: 'react-hint-content'
 			}, this.renderContent(content))));
 		};
 
